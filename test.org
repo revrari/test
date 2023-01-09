@@ -1,0 +1,29 @@
+#+title: Test org on Git
+#+OPTIONS: \n:t 
+
+When I create org documents I make sure that I have this setting in my init.el file:
+
+'(org-export-preserve-breaks t)
+
+One can also use #+OPTIONS: \n:t  on a file-per-file basis to force org to preserve all line breaks when exporting. This works fine when I export an org file using C-c C-e. However, if I upload the org file to Git, it does not display with the line breaks. For example:
+
+Line 1
+Line 2
+Line 2
+Line 4
+
+Displays as
+
+Line 1 Line 2 Line 2 Line 4
+
+I have tried adding \\ at the end of each line, but when uploaded to Git, it appears as
+
+Line\1\Line\2\Line 2\Line 4
+
+I would like it simply to appear as
+
+Line 1
+Line 2
+Line 2
+Line 4
+
